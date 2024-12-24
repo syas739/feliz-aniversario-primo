@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Aniversário, Primo!</title>
+  <style>
+    @keyframes confetti {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(800px); opacity: 0; }
+    }
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      background-color: #fffbeb;
+      color: #333;
+      margin: 0;
+      overflow: hidden;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff7f50;
+      text-shadow: 2px 2px #ffa07a;
+    }
+    p {
+      font-size: 1.5em;
+      color: #555;
+    }
+    button {
+      background-color: #ff7f50;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px #d16541;
+    }
+    button:hover {
+      background-color: #ffa07a;
+    }
+    button:active {
+      box-shadow: none;
+      transform: translateY(4px);
+    }
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #ff7f50;
+      animation: confetti 3s linear infinite;
+    }
+    .confetti:nth-child(2) { background-color: #ffa07a; left: 20%; animation-delay: 0.5s; }
+    .confetti:nth-child(3) { background-color: #ff4500; left: 40%; animation-delay: 1s; }
+    .confetti:nth-child(4) { background-color: #ff6347; left: 60%; animation-delay: 1.5s; }
+    .confetti:nth-child(5) { background-color: #ffdab9; left: 80%; animation-delay: 2s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 Feliz Aniversário, Primo! 🎉</h1>
+    <p>Hoje é um dia incrível, e sabe por quê? Porque você é a estrela do show! 🥳<br> Espero que o seu dia seja cheio de risadas, bolo e momentos inesquecíveis!</p>
+    <p>Clique no botão abaixo para descobrir a surpresa:</p>
+    <button onclick="showMessage()">Clique aqui</button>
+  </div>
+
+  <script>
+    function showMessage() {
+      alert('Parabéns, primo! Que seu ano seja tão incrível quanto você! 🌟🎂🎉');
+    }
+
+    // Gerar confetes
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = Math.random() * 2 + 3 + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
